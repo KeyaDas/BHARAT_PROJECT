@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        .head, table, td{
+           margin-top: 50px;
+           font-size: x-large;
+           padding: 8px;
+           font-family: Georgia, 'Times New Roman', Times, serif;
+           color: #55779c;           
+        }
+        table{
+            border: 3px solid #1b4067;
+            padding: 35px;
+            background: linear-gradient(to bottom, white, rgb(198, 255, 179));
+        }   
+        
+        input{
+            height: 1cm;
+            border-radius: 6%;
+            padding: 4px;
+            font-size: large;
+            font-family: 'Cascadia Code SemiBold' ;
+        }
+        header{
+            font-size: xx-large;
+            font-style: bold;
+            color:#1b4067;
+            font-family: 'Cooper Black';
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="head" align="center">
+        <header>Celsius to Fahrenheit</header>
+        <div>Temperature Converter</div>
+    </div>
+    <table align="center" border="0">
+        <tr>
+            <td>
+                <label>Celsius (&deg;C)</label><br><input type="number" value="0" id="C"/>
+            </td>
+            <td><label>=></label></td>
+            <td>
+                <label>Fahrenheit (&deg;F)</label><br><input type="number" value="32" id="F" readonly/> 
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center">
+                <input type="button" value="CONVERTER" onclick="convert()"/>
+            </td>
+        </tr>
+    </table>
+
+
+    <script>
+        function convert(){
+            var celsius = parseFloat(document.getElementById("C").value);
+            var fahrenheit = (celsius * 9/5) + 32;
+            document.getElementById("F").value = fahrenheit.toFixed(2);
+        }
+    </script>
+</body>
+</html>
